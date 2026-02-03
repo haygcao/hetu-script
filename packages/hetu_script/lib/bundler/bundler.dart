@@ -42,7 +42,7 @@ class HTBundler {
     Version? version,
   }) {
     final sourceParseResult = parser.parseSource(source);
-    final tik = DateTime.now().millisecondsSinceEpoch;
+    final sw = Stopwatch()..start();
     final sourceParseErrors = sourceParseResult.errors;
     final values = <String, ASTSource>{};
     final sources = <String, ASTSource>{};
@@ -129,9 +129,10 @@ class HTBundler {
       version: version,
     );
     if (config.printPerformanceStatistics) {
-      final tok = DateTime.now().millisecondsSinceEpoch;
-      print('hetu: ${tok - tik}ms\tto bundle\t[${source.fullName}]');
+      print(
+          'hetu: ${sw.elapsedMilliseconds}ms\tto bundle\t[${source.fullName}]');
     }
+    sw.stop();
     return compilation;
   }
 }

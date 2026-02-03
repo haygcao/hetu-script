@@ -11,12 +11,18 @@ class MessageSeverity implements Comparable<MessageSeverity> {
   static const info = MessageSeverity('INFO', 2, 'info');
 
   /// The severity representing a warning.
-  static const warn = MessageSeverity('WARN', 3, 'warn');
+  static const warning = MessageSeverity('WARNING', 3, 'warning');
 
   /// The severity representing an error.
   static const error = MessageSeverity('ERROR', 4, 'error');
 
-  static const List<MessageSeverity> values = [none, debug, info, warn, error];
+  static const List<MessageSeverity> values = [
+    none,
+    debug,
+    info,
+    warning,
+    error
+  ];
 
   static MessageSeverity of(String name) {
     switch (name) {
@@ -26,8 +32,8 @@ class MessageSeverity implements Comparable<MessageSeverity> {
         return MessageSeverity.debug;
       case 'info':
         return MessageSeverity.info;
-      case 'warn':
-        return MessageSeverity.warn;
+      case 'warning':
+        return MessageSeverity.warning;
       case 'error':
         return MessageSeverity.error;
       default:

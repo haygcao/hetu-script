@@ -9,7 +9,8 @@ abstract class HTLogger {
 
   void info(String message) => log(message, severity: MessageSeverity.info);
 
-  void warn(String message) => log(message, severity: MessageSeverity.warn);
+  void warning(String message) =>
+      log(message, severity: MessageSeverity.warning);
 
   void error(String message) => log(message, severity: MessageSeverity.error);
 }

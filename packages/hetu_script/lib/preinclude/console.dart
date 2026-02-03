@@ -8,7 +8,7 @@ class Console {
   HTLogger logger;
 
   static const _defaultTimerId = 'default';
-  final Map<String, int> _tiks = {};
+  final Map<String, Stopwatch> _stopwatches = {};
 
   Console({
     required this.lexicon,
@@ -30,28 +30,30 @@ class Console {
 
   void info(dynamic messages) => log(messages, severity: MessageSeverity.info);
 
-  void warn(dynamic messages) => log(messages, severity: MessageSeverity.warn);
+  void warning(dynamic messages) =>
+      log(messages, severity: MessageSeverity.warning);
 
   void error(dynamic messages) =>
       log(messages, severity: MessageSeverity.error);
 
   void time(String? id) {
     id ??= _defaultTimerId;
-    if (_tiks.containsKey(id)) {
-      warn('Timer \'$id\' already exists.');
+    if (_stopwatches.containsKey(id)) {
+      warning('Timer \'$id\' already exists.');
     }
 
-    _tiks[id] = DateTime.now().millisecondsSinceEpoch;
+    _stopwatches[id] = Stopwatch()..start();
   }
 
   int? timeLog(String? id, {bool endTimer = false}) {
     id ??= _defaultTimerId;
     int? t;
-    if (_tiks.containsKey(id)) {
-      t = DateTime.now().millisecondsSinceEpoch - _tiks[id]!;
+    if (_stopwatches.containsKey(id)) {
+      t = _stopwatches[id]!.elapsedMilliseconds;
       log('$id: $t ms');
       if (endTimer) {
-        _tiks.remove(id);
+        _stopwatches[id]!.stop();
+        _stopwatches.remove(id);
       }
     } else {
       error('Timer \'$id\' does not exist.');

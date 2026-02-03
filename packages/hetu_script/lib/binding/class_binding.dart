@@ -6,8 +6,6 @@ import 'package:characters/characters.dart';
 import 'package:hetu_script/utils/math.dart';
 
 import '../external/external_class.dart';
-// import '../value/object.dart';
-// import '../type/type.dart';
 import '../error/error.dart';
 import '../utils/uid.dart';
 import '../utils/crc32b.dart';
@@ -15,10 +13,8 @@ import '../value/function/function.dart';
 import '../preinclude/console.dart';
 import '../utils/json.dart';
 import '../lexicon/lexicon.dart';
-// import '../value/struct/struct.dart';
 import '../locale/locale.dart';
 import '../utils/collection.dart';
-// import '../utils/math.dart';
 
 class HTNumberClassBinding extends HTExternalClass {
   HTNumberClassBinding() : super('number');
@@ -1071,8 +1067,8 @@ class HTConsoleClassBinding extends HTExternalClass {
         return ({positionalArgs, namedArgs}) => console.debug(positionalArgs);
       case 'console.info':
         return ({positionalArgs, namedArgs}) => console.info(positionalArgs);
-      case 'console.warn':
-        return ({positionalArgs, namedArgs}) => console.warn(positionalArgs);
+      case 'console.warning':
+        return ({positionalArgs, namedArgs}) => console.warning(positionalArgs);
       case 'console.error':
         return ({positionalArgs, namedArgs}) => console.error(positionalArgs);
       case 'console.time':

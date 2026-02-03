@@ -8,7 +8,7 @@ part of 'error.dart';
 const Map<String, MessageSeverity> severityMap = {
   'error': MessageSeverity.error,
   'info': MessageSeverity.info,
-  'warning': MessageSeverity.warn
+  'warning': MessageSeverity.warning
 };
 
 /// Error processor configuration derived from analysis (or embedder) options.

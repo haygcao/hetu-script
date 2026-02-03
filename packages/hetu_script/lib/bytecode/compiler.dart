@@ -74,12 +74,13 @@ class HTCompiler implements AbstractASTVisitor<Uint8List> {
   Uint8List compile(
     ASTCompilation compilation, // {  bool printPerformanceStatistics = false,}
   ) {
-    final tik = DateTime.now().millisecondsSinceEpoch;
+    final sw = Stopwatch()..start();
     final bytes = visitCompilation(compilation);
     if (config.printPerformanceStatistics) {
-      final tok = DateTime.now().millisecondsSinceEpoch;
-      print('hetu: ${tok - tik}ms\tto compile\t[${compilation.entryFullname}]');
+      print(
+          'hetu: ${sw.elapsedMilliseconds}ms\tto compile\t[${compilation.entryFullname}]');
     }
+    sw.stop();
     return bytes;
   }
 

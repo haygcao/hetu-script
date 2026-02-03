@@ -117,11 +117,11 @@ class HTErrorType implements Comparable<HTErrorType> {
 
   /// Reported by analyzer.
   static const staticTypeWarning =
-      HTErrorType('TYPE_WARNING', 4, MessageSeverity.warn);
+      HTErrorType('TYPE_WARNING', 4, MessageSeverity.warning);
 
   /// Reported by analyzer.
   static const staticWarning =
-      HTErrorType('STATIC_WARNING', 5, MessageSeverity.warn);
+      HTErrorType('STATIC_WARNING', 5, MessageSeverity.warning);
 
   /// Compile-time errors are errors that preclude execution. A compile time
   /// error must be reported by a compiler before the erroneous code is
