@@ -769,7 +769,7 @@ class HTFunction extends HTFunctionDeclaration
 
       return result;
     } catch (error, stackTrace) {
-      if (stackPushed) {
+      if (stackPushed && interpreter.stackTraceList.isNotEmpty) {
         interpreter.stackTraceList.removeLast();
       }
       if (interpreter.config.processError) {
