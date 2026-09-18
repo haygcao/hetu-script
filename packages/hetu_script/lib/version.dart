@@ -1,3 +1,3 @@
 import 'package:pub_semver/pub_semver.dart';
 
-final kHetuVersion = Version(0, 6, 2);
+final kHetuVersion = Version(0, 6, 3);
