@@ -13,7 +13,7 @@ try:
     print(result.stdout)  
 
     result = subprocess.run(
-        'dart pub global activate --source path packages/hetu_script_dev_tools',
+        'dart install \'hetu_script_dev_tools@{path: packages/hetu_script_dev_tools}\''
         shell=True,
         check=True,
         stdout=subprocess.PIPE,

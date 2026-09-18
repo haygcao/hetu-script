@@ -29,7 +29,7 @@ A lightweight scripting language written in Dart for embedding in Flutter apps.
 
 Hetu is a lightweight scripting language purely written in Dart for embedding in Flutter apps. Our goal is to enable Flutter app & game to have hotfix and scripting ability.
 
-**[Documentation](https://hetu.dev/docs/en-US/) [中文文档](https://hetu.dev/docs/zh-Hans/)**
+**[Documentation](https://hetu-script.github.io/docs/en-US/) [中文文档](https://hetu-script.github.io/docs/zh-Hans/)**
 
 ## Features
 
@@ -38,7 +38,7 @@ Hetu is a lightweight scripting language purely written in Dart for embedding in
 - Runs on all platforms that flutter supports, including web browsers and desktop.
 - Extremely easy on binding, call Dart functions in script or call script functions in Dart with just one line.
 
-Test Hetu script in the online **[playground](https://hetu.dev/codepad/)**.
+Test Hetu script in the online **[playground](https://hetu-script.github.io/codepad/)**.
 
 ## Quick start
 
@@ -83,7 +83,7 @@ void main() {
 }
 ```
 
-You can check the [documentation](https://hetu.dev/docs/en-US/) for more information on the [grammar](https://hetu.dev/docs/en-US/grammar/) and [binding](https://hetu.dev/docs/en-US/guide/binding/).
+You can check the [documentation](https://hetu-script.github.io/docs/en-US/) for more information on the [grammar](https://hetu-script.github.io/docs/en-US/grammar/) and [binding](https://hetu-script.github.io/docs/en-US/guide/binding/).
 
 ## IDE extension
 
@@ -135,4 +135,4 @@ You can support my project by simply giving it a star on GitHub.
 
 Or you can buy me a coffee:
 
-[![Buy me a coffee](https://hetu.dev/image/buy_me_a_coffee_small.png)](https://www.buymeacoffee.com/chengfubeiming)
+[![Buy me a coffee](https://hetu-script.github.io/image/buy_me_a_coffee_small.png)](https://www.buymeacoffee.com/chengfubeiming)

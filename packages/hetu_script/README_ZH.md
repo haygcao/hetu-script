@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://hetu.dev">
+  <a href="https://hetu-script.github.io/">
     <img alt="hetu script" width="200px" src="https://hetu-script.github.io/image/hetu-logo-large.png">
   </a>
   <h1 align="center">河图脚本语言</h1>
@@ -31,7 +31,7 @@
 
 ## 文档
 
-[英文](https://hetu.dev/docs/en-US/) [简体中文](https://hetu.dev/docs/zh-Hans/)
+[英文](https://hetu-script.github.io/docs/en-US/) [简体中文](https://hetu-script.github.io/docs/zh-Hans/)
 
 ## 快速上手
 
@@ -55,7 +55,7 @@ void main() {
 }
 ```
 
-我们可以看到河图的[语法](https://hetu.dev/docs/zh-Hans/grammar/)非常简单，如果你熟悉 dart/typescript/kotlin/swift 等现代语言，只要注意下面几点，就可以直接上手。
+我们可以看到河图的[语法](https://hetu-script.github.io/docs/zh-Hans/grammar/)非常简单，如果你熟悉 dart/typescript/kotlin/swift 等现代语言，只要注意下面几点，就可以直接上手。
 
 - 句末分号可选。
 - 函数名字前面要加关键字： 'function, get, set, constructor'。
@@ -64,7 +64,7 @@ void main() {
 
 ## 绑定
 
-[河图和 Dart 交换数据和调用函数](https://hetu.dev/docs/zh-Hans/guide/binding/)简单到令人发指。下面是一个脚本调用 Dart 函数，并且直接操作 Dart 的 Map 对象的例子。
+[河图和 Dart 交换数据和调用函数](https://hetu-script.github.io/docs/zh-Hans/guide/binding/)简单到令人发指。下面是一个脚本调用 Dart 函数，并且直接操作 Dart 的 Map 对象的例子。
 
 ```dart
 import 'package:hetu_script/hetu_script.dart';
@@ -129,4 +129,4 @@ QQ 群：812529118
 
 也可以在下面的的链接进行捐赠：
 
-[![Buy me a coffee](https://hetu.dev/image/buy_me_a_coffee_small.png)](https://www.buymeacoffee.com/chengfubeiming)
+[![Buy me a coffee](https://hetu-script.github.io/image/buy_me_a_coffee_small.png)](https://www.buymeacoffee.com/chengfubeiming)
