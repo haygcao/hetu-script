@@ -117,12 +117,6 @@ meaning() -> any // repl print
 
 可以在这里查看关于 Dart 的 [pub global activate](https://dart.dev/tools/pub/cmd/pub-global) 功能的更多信息。
 
-## 讨论组
-
-Discord: [https://discord.gg/aJedwcRPr8](https://discord.gg/aJedwcRPr8)
-
-QQ 群：812529118
-
 ## 支持我的工作
 
 如果要支持我，可以在 GitHub 上为这个项目加个 star。

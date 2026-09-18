@@ -123,12 +123,6 @@ meaning() -> any // repl print
 
 You can check this [official document](https://dart.dev/tools/pub/cmd/pub-global) for more information on 'pub global activate'.
 
-## Discussion group
-
-Discord: [https://discord.gg/aJedwcRPr8](https://discord.gg/aJedwcRPr8)
-
-中文交流可以加 QQ 群：812529118
-
 ## Support
 
 You can support my project by simply giving it a star on GitHub.
