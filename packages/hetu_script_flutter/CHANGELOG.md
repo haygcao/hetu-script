@@ -1,6 +1,6 @@
-## 0.1.0
+## 0.1.2
 
-- Upgrade to hetu_script 0.4.1
+- Upgrade to hetu_script 0.6.3
 
 ## 0.0.4
 

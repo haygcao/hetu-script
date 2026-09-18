@@ -1,11 +1,14 @@
-import { path } from '@vuepress/utils';
+import { path } from 'vuepress/utils';
 import { defineUserConfig } from 'vuepress';
-import { defaultTheme } from '@vuepress/theme-default';
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
 import { searchPlugin } from '@vuepress/plugin-search';
+import { viteBundler } from '@vuepress/bundler-vite'
+import { defaultTheme } from '@vuepress/theme-default'
 
 export default defineUserConfig({
+  bundler: viteBundler(),
+  theme: defaultTheme(),
   base: '/docs/',
   locales: {
     '/en-US/': {
