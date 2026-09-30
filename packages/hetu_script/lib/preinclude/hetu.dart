@@ -90,6 +90,10 @@ class HetuConfig
   @override
   bool debugMode;
 
+  /// defaults to `null`（未设置时由 Hetu 门面注入构造函数 logger 或控制台 logger）
+  @override
+  HTLogger? logger;
+
   /// defaults to `true`
   @override
   bool allowVariableShadowing;
@@ -137,6 +141,7 @@ class HetuConfig
     this.stackTraceDisplayCountLimit = 5,
     this.processError = true,
     this.debugMode = false,
+    this.logger,
     this.allowVariableShadowing = false,
     this.allowImplicitVariableDeclaration = false,
     this.allowImplicitNullToZeroConversion = false,
@@ -204,6 +209,7 @@ class Hetu {
       lexicon: lexicon,
       logger: logger ?? HTConsoleLogger(),
     );
+    this.config.logger ??= logger ?? HTConsoleLogger();
     if (locale != null) {
       HTLocale.current = locale;
     }

@@ -29,6 +29,7 @@ import '../type/nominal.dart';
 import '../type/structural.dart';
 import '../lexicon/lexicon.dart';
 import '../lexicon/lexicon_hetu.dart';
+import '../logger/logger.dart';
 import '../source/source.dart';
 import '../resource/resource.dart';
 import '../resource/resource_context.dart';
@@ -68,6 +69,9 @@ class InterpreterConfig implements ErrorHandlerConfig {
   @override
   bool debugMode;
 
+  /// 可恢复问题（如忽略未定义函数调用）的告警出口，由 Hetu 门面注入
+  HTLogger? logger;
+
   bool allowVariableShadowing;
 
   bool allowImplicitVariableDeclaration;
@@ -90,6 +94,7 @@ class InterpreterConfig implements ErrorHandlerConfig {
     this.stackTraceDisplayCountLimit = 5,
     this.processError = true,
     this.debugMode = false,
+    this.logger,
     this.allowVariableShadowing = true,
     this.allowImplicitVariableDeclaration = false,
     this.allowImplicitNullToZeroConversion = false,
@@ -220,6 +225,9 @@ class HTInterpreter {
   HTStackFrame get stack => _stackFrames.last;
 
   bool isInitted = false;
+
+  /// invoke(ignoreUndefined: true) 时已告警过的函数名（去重，避免每次调用都刷告警）
+  final Set<String> _undefinedInvokeWarnings = {};
 
   /// A bytecode interpreter.
   HTInterpreter(
@@ -588,6 +596,11 @@ class HTInterpreter {
         if (ignoreUndefined == false) {
           throw HTError.callNullObject(func);
         } else if (ignoreUndefined == true) {
+          // 忽略未定义函数时通过 logger 告警（同一函数名只告警一次，避免刷屏）
+          final funcId = namespace != null ? '$namespace.$func' : func;
+          if (_undefinedInvokeWarnings.add(funcId)) {
+            config.logger?.warning('hetu: [$funcId] is not defined.');
+          }
           if (config.debugMode) {
             print('${kConsoleColorYellow}hetu: $func is not defined.');
           }
